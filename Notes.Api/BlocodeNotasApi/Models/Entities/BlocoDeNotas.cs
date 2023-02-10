@@ -1,4 +1,6 @@
-﻿namespace BlocodeNotasApi.Models.Entities
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace BlocodeNotasApi.Models.Entities
 {
     public class BlocoDeNotas
     {
@@ -7,8 +9,9 @@
             Titulo = titulo;
             Descricao = descricao;
         }
-        public string? Titulo { get; private set; }
 
+        public int Id { get; protected set; }
+        public string? Titulo { get; private set; }
         public string? Descricao { get; private set; }
     }
 }

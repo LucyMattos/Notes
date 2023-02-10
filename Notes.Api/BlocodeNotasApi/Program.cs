@@ -1,4 +1,20 @@
+using BlocodeNotasApi.Repositories;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
+
+
+    var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+    builder.Services.AddDbContext<NotesContext>(options =>
+    {
+        options.EnableSensitiveDataLogging(true);
+        options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"), opt =>
+        {
+
+            opt.MigrationsAssembly("BlocodeNotasApi");
+            opt.MigrationsHistoryTable("Migrations", "Configuration");
+        });
+    }, ServiceLifetime.Transient);
 
 // Add services to the container.
 

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projetos\\BlocodeNotas\\BlocoDeNotas\\BlocodeNotasApi\\BlocodeNotasApi.csproj": {}
+    "C:\\Projetos\\BlocoDeNotasApi\\Notes\\Notes.Api\\BlocodeNotasApi\\BlocodeNotasApi.csproj": {}
   },
   "projects": {
-    "C:\\Projetos\\BlocodeNotas\\BlocoDeNotas\\BlocodeNotasApi\\BlocodeNotasApi.csproj": {
+    "C:\\Projetos\\BlocoDeNotasApi\\Notes\\Notes.Api\\BlocodeNotasApi\\BlocodeNotasApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projetos\\BlocodeNotas\\BlocoDeNotas\\BlocodeNotasApi\\BlocodeNotasApi.csproj",
+        "projectUniqueName": "C:\\Projetos\\BlocoDeNotasApi\\Notes\\Notes.Api\\BlocodeNotasApi\\BlocodeNotasApi.csproj",
         "projectName": "BlocodeNotasApi",
-        "projectPath": "C:\\Projetos\\BlocodeNotas\\BlocoDeNotas\\BlocodeNotasApi\\BlocodeNotasApi.csproj",
+        "projectPath": "C:\\Projetos\\BlocoDeNotasApi\\Notes\\Notes.Api\\BlocodeNotasApi\\BlocodeNotasApi.csproj",
         "packagesPath": "C:\\Users\\lucy.mattos\\.nuget\\packages\\",
-        "outputPath": "C:\\Projetos\\BlocodeNotas\\BlocoDeNotas\\BlocodeNotasApi\\obj\\",
+        "outputPath": "C:\\Projetos\\BlocoDeNotasApi\\Notes\\Notes.Api\\BlocodeNotasApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\lucy.mattos\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,20 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.2, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"

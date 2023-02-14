@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <h2>Meu Bloco de Notas</h2>
+        <div class="row">
+            <form novalidate autocomplete="off">
+
+                <div class="col-md-6">
+                    <label class="control-label">Titulo</label>
+                    <input class="form-control" type="text" placeholder="Digite o título aqui" name="titulo" formControlName="titulo">
+                </div>
+
+                <div class="col-md-6">
+                    <label class="control-label">Descrição</label>
+                    <textarea class="form-control" rows="5" placeholder="Digite aqui sua anotação" name="descricao"
+                        formControlName="descricao"></textarea>
+                </div>
+                <div class="row">
+                    <span class="col-md-3"><button (click)="salvar()">Salvar</button></span>
+                    <span class="col-md-3"><button (click)="cancelar()">Cancelar</button></span>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

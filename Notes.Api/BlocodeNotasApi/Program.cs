@@ -16,6 +16,9 @@ var builder = WebApplication.CreateBuilder(args);
         });
     }, ServiceLifetime.Transient);
 
+
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
 // Add services to the container.
 
 builder.Services.AddControllers();

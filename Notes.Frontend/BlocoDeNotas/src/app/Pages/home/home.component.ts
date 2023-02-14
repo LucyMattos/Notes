@@ -1,3 +1,4 @@
+import { Notas } from './../../models/notas.model';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -8,7 +9,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  adicionarNotaForm! : FormGroup
+  adicionarNotaForm! : FormGroup;
+
+  nota: Notas[] = [];
 
 constructor(private router: Router,
             private fb: FormBuilder){}
@@ -26,7 +29,8 @@ this.adicionarNotaForm = this.fb.group({
 }
 
 salvar(){
-
+if(this.adicionarNotaForm.valid)
+return
 }
 
 cancelar(){

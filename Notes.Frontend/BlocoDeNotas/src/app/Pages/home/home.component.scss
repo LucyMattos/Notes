@@ -1,4 +1,54 @@
 .posicao {
     display: flex;
+    justify-content: center;
+}
+
+.ajuste {
+    margin-left: 200px;
+}
+
+.btn-salvar {
+border-radius: 3px;
+border: 1px solid #30804e;
+font-size: 16px;
+color: #fff;
+background-color: #30804e;
+margin-top: 15px;
+padding: 0px 12px;
+}
+
+.btn-cancelar {
+    border-radius: 3px;
+    border: solid 1px  rgb(202, 28, 28);
+    font-size: 16px;
+    color: #fff;
+    background-color: rgb(202, 28, 28);
+    margin-top: 15px;
+}
+
+.alinhamento-btn {
+    display: flex;
     justify-content: end;
+}
+
+label{
+    font-size: 20px;
+    margin: 10px 0px;
+}
+
+input, textarea {
+    border: 1px solid #707070;
+}
+
+textarea:focus, input:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+    border: 1px solid #707070
+}
+
+.not-found {
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px 10px;
 }

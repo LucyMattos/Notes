@@ -1,25 +1,22 @@
 .posicao {
     display: flex;
     justify-content: center;
-}
-
-.ajuste {
-    margin-left: 200px;
+    margin: 40px 0px;
 }
 
 .btn-salvar {
-border-radius: 3px;
-border: 1px solid #30804e;
-font-size: 16px;
-color: #fff;
-background-color: #30804e;
-margin-top: 15px;
-padding: 0px 12px;
+    border-radius: 3px;
+    border: 1px solid #30804e;
+    font-size: 16px;
+    color: #fff;
+    background-color: #30804e;
+    margin-top: 15px;
+    padding: 0px 12px;
 }
 
 .btn-cancelar {
     border-radius: 3px;
-    border: solid 1px  rgb(202, 28, 28);
+    border: solid 1px rgb(202, 28, 28);
     font-size: 16px;
     color: #fff;
     background-color: rgb(202, 28, 28);
@@ -31,16 +28,18 @@ padding: 0px 12px;
     justify-content: end;
 }
 
-label{
+label {
     font-size: 20px;
     margin: 10px 0px;
 }
 
-input, textarea {
+input,
+textarea {
     border: 1px solid #707070;
 }
 
-textarea:focus, input:focus {
+textarea:focus,
+input:focus {
     box-shadow: 0 0 0 0;
     outline: 0;
     border: 1px solid #707070
@@ -51,4 +50,42 @@ textarea:focus, input:focus {
     font-weight: bold;
     text-align: center;
     padding: 20px 10px;
+}
+
+.config-tabela {
+    margin: 80px 0px;
+}
+
+.ajuste {
+    float: right;
+}
+
+.excluir {
+    border-radius: 2px;
+    border: solid 1px rgb(202, 28, 28);
+    color: #fff;
+    background-color: rgb(202, 28, 28);
+    margin: 8px;
+}
+
+.editar {
+    border-radius: 2px;
+    border: 1px solid #30804e;
+    color: #fff;
+    background-color: #30804e;
+    margin: 8px;
+}
+
+.text1 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 10vh;
+}
+
+.text2 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 30vh;
 }

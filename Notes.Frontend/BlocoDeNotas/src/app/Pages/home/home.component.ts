@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
   adicionarNotaForm!: FormGroup;
 
   nota: Notas[] = [];
+  notaExclusao!: Notas;
 
   constructor(private router: Router,
     private fb: FormBuilder,
@@ -56,4 +57,19 @@ export class HomeComponent implements OnInit {
       this.nota = result;
     })
   }
+
+  editarNota(item: Notas) {
+    this.adicionarNotaForm.patchValue(item);
+  }
+
+  excluirNota(id: number) {
+    this.notasService.excluirNota(id).subscribe(() => {
+      this.buscarNotas();
+    });
+  }
+
+  excluir(item: Notas) {
+    this.notaExclusao = item
+  }
+
 }

@@ -1,23 +1,30 @@
 <div class="container">
-    <div class="row">
-        <h3 class="posicao">Minhas Anotações <i class="bi bi-pencil-fill"></i></h3>
-        <form [formGroup]="adicionarNotaForm" class="ajuste" novalidate autocomplete="off">
+    <div>
+        <h3 class="posicao">Minhas Anotações <i class="bi bi-pencil"></i></h3>
+        <form [formGroup]="adicionarNotaForm" novalidate autocomplete="off">
 
-            <div class="col-md-8">
-                <label class="control-label">Titulo</label>
-                <input class="form-control" type="text" placeholder="Digite o título aqui" name="titulo"
-                    formControlName="titulo">
-            </div>
-
-            <div class="col-md-8">
-                <label class="control-label">Descrição</label>
-                <textarea class="form-control" rows="5" placeholder="Digite aqui sua anotação" name="descricao"
-                    formControlName="descricao"></textarea>
-            </div>
             <div class="row">
-                <div class="col-md-7 alinhamento-btn"><button class="btn-salvar" (click)="salvar()">Salvar</button>
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <label class="control-label">Titulo</label>
+                    <input class="form-control" type="text" placeholder="Digite o título aqui" name="titulo"
+                        formControlName="titulo">
                 </div>
-                <div class="col-md-3"><button class="btn-cancelar" (click)="cancelar()">Cancelar</button></div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <label class="control-label">Descrição</label>
+                    <textarea class="form-control" rows="5" placeholder="Digite aqui sua anotação" name="descricao"
+                        formControlName="descricao"></textarea>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-9 alinhamento-btn"><button class="btn-salvar" (click)="salvar()">Salvar</button>
+                </div>
+                <div class="col-md-1"><button class="btn-cancelar" (click)="cancelar()">Cancelar</button></div>
             </div>
         </form>
     </div>
@@ -25,33 +32,55 @@
 
 
 <div class="container">
-        <div class="table-responsive">
-            <table class="table">
-                <thead>
+    <div class="config-tabela">
+        <table class="table">
+            <thead>
+                <tr style="background-color:#707070; ">
+                    <th>Título </th>
+                    <th>Descrição</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngIf="nota?.length == 0 || nota == null">
+                    <td colspan="22" class="not-found">
+                        Nenhum registro foi encontrado
+                    </td>
+                </tr>
+                <ng-container *ngFor="let item of nota">
                     <tr>
-                        <th>Título </th>
-                        <th>Descrição</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngIf="nota?.length == 0 || nota == null">
-                        <td colspan="22" class="not-found">
-                            Nenhum registro foi encontrado
+                        <td class="col-2 text1 ">{{item.titulo}}</td>
+                        <td class="col-8 text2">{{item.descricao}}</td>
+
+                        <td class="col-2">
+                            <span class="ajuste"><button class="bi bi-trash excluir" tabindex="0" data-toggle="tooltip"
+                                title="Excluir" (click)="excluir(item)" data-bs-toggle="modal" data-bs-target="#modalExclusao"></button></span>
+
+                            <span class="ajuste"><button class="bi bi-pencil editar" tabindex="0" data-toggle="tooltip"
+                                    title="Editar" (click)="editarNota(item)"></button></span>
+                                   
                         </td>
                     </tr>
-                    <ng-container *ngFor="let x of nota">
-                        <tr>
-                            <td>{{x.titulo}}</td>
-                            <td>{{x.descricao}}</td>
-
-                            <td>
-                                    <span><button class="bi bi-pencil-fill" tabindex="0" data-toggle="tooltip" title="Editar">editar</button></span>
-                                
-                            </td>
-                        </tr>
-                    </ng-container>
-                </tbody>
-            </table>
+                </ng-container>
+            </tbody>
+        </table>
+    </div>
+<!-- Modal -->
+<div class="modal fade" id="modalExclusao" tabindex="-1" aria-labelledby="modalExclusao" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="modalExclusao">Excluir nota</h1>
+          <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+        <div class="modal-body">
+          Realmente deseja excluir esta nota ?
+        </div>
+        <div class="modal-footer">
+          <button class="btn-salvar" data-bs-dismiss="modal">Cancelar</button>
+          <button class="btn-cancelar" data-bs-dismiss="modal" (click)="excluirNota(notaExclusao.id)">Excluir</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
